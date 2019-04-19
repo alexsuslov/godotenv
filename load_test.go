@@ -28,13 +28,13 @@ func TestGetPanic(t *testing.T) {
 		panic bool
 	}{
 		{
-			"GetPanic get variable or panic",
+			"GetPanic get variable, no panic",
 			args{"TEST_INT"},
 			"5",
 			false,
 		},
 		{
-			"GetPanic get variable or panic",
+			"GetPanic not get variable, panic",
 			args{"TEST_INT1"},
 			"5",
 			true,
