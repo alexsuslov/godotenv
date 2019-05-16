@@ -2,6 +2,7 @@ package godotenv
 
 import (
 	"errors"
+	"log"
 	"strconv"
 	"strings"
 	"syscall"
@@ -10,6 +11,15 @@ import (
 // feature
 // _test := godotenv.GetPanic("TEST_INT")
 // _test = "5" || panic("TEST_INT")
+
+// GetWarrning get variable or panic
+func GetWarrning(key string) string {
+	v, _ := syscall.Getenv(key)
+	if v == "" {
+		log.Println(key)
+	}
+	return v
+}
 
 // GetPanic get variable or panic
 func GetPanic(key string) string {
